@@ -21,40 +21,6 @@
       height: 36px;
     }
 
-    .headerNavigation {
-      width: 600px;
-
-      .containerNavigation {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .li {
-        position: relative;
-        transition: color 0.3s ease;
-      }
-
-      .li:hover {
-        color: #37c174;
-        cursor: pointer;
-      }
-
-      .li::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: -8px; /* Отступ линии от текста */
-        width: 0;
-        height: 3px; /* Толщина линии */
-        background-color: rgb(62, 175, 126);
-        transition: all 0.3s ease;
-        transform: translateX(-50%);
-      }
-
-      .li:hover::after {
-        width: 100%;
-      }
-    }
     .headerAuth {
       display: flex;
 

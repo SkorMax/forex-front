@@ -2,6 +2,7 @@
 
 import styles from "./Header.module.scss";
 import { useEffect, useState } from "react";
+import HeaderNav from "@/app/ui/components/Header/HeaderNav/HeaderNav";
 
 export default function Header() {
   const [currentScrollY, setCurrentScrollY] = useState("start");
@@ -45,15 +46,7 @@ export default function Header() {
             />
           </a>
         </div>
-        <div className={styles.headerNavigation}>
-          <ul className={styles.containerNavigation}>
-            <li className={styles.li}>الرئيسية</li>
-            <li className={styles.li}>الاصول المالية +</li>
-            <li className={styles.li}>أدوات التداول +</li>
-            <li className={styles.li}>انواع الحسابات +</li>
-            <li className={styles.li}>عن الشركة +</li>
-          </ul>
-        </div>
+        <HeaderNav />
         <div className={styles.headerAuth}>
           <button className={styles.headerBtn}>دخول</button>
           <button className={styles.headerBtn}>سجل الأن</button>
