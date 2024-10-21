@@ -1,0 +1,92 @@
+.header {
+  position: static;
+  width: 100%;
+  height: 81px;
+  background-color: #000;
+  border-bottom: 1px solid white;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    height: 100%;
+    width: 1750px;
+    margin: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .headerBranding {
+      width: 160px;
+      height: 36px;
+    }
+
+    .headerNavigation {
+      width: 600px;
+
+      .containerNavigation {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .li {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .li:hover {
+        color: #37c174;
+        cursor: pointer;
+      }
+
+      .li::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -8px; /* Отступ линии от текста */
+        width: 0;
+        height: 3px; /* Толщина линии */
+        background-color: rgb(62, 175, 126);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .li:hover::after {
+        width: 100%;
+      }
+    }
+    .headerAuth {
+      display: flex;
+
+      .headerBtn {
+        width: 108px;
+        height: 42px;
+        background-color: rgb(62, 175, 126);
+        margin: 0 5px;
+        border-radius: 5px;
+        color: black;
+        transition: all 0.3s ease;
+      }
+
+      .headerBtn:hover {
+        background-color: white;
+      }
+    }
+  }
+}
+
+.headerWentDown {
+  @extend .header;
+  position: fixed;
+  top: -81px;
+  transform: translateY(81px);
+  transition: transform 0.8s ease;
+}
+
+.headerWentUp {
+  @extend .header;
+  position: fixed;
+  top: -81px;
+  transform: translateY(-81px);
+  transition: transform 0.8s ease;
+}
