@@ -1,0 +1,20 @@
+.headerAuth {
+  display: flex;
+
+  .headerBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 108px;
+    height: 42px;
+    background-color: rgb(62, 175, 126);
+    margin: 0 5px;
+    border-radius: 5px;
+    color: black;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: white;
+    }
+  }
+}

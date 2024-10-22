@@ -1,49 +1,77 @@
 .headerNavigation {
   width: 600px;
 
-  .ul {
+  .headerUl {
     display: flex;
     justify-content: space-between;
   }
 
-  .li {
+  .headerLi {
     position: relative;
     transition: color 0.3s ease;
     height: 81px;
     display: flex;
     align-items: center;
-  }
 
-  .li:hover {
-    color: #37c174;
-    cursor: pointer;
-  }
+    .dropdownMenu {
+      width: max-content;
+      max-height: 0;
+      position: absolute;
+      top: 100%;
+      background-color: white;
+      border-radius: 0 0 5px 5px;
+      color: black;
+      font-size: 14px;
+      line-height: 40px;
+      opacity: 0;
+      transition:
+        max-height 0.9s ease,
+        opacity 0.2s ease;
+      overflow: hidden;
+      z-index: 10;
+      visibility: hidden;
 
-  .li::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 21px; /* Отступ линии от текста */
-    width: 0;
-    height: 3px; /* Толщина линии */
-    background-color: rgb(62, 175, 126);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-  }
+      ul {
+        height: 100%;
+        width: 100%;
+        padding: 28px 28px 28px 84px;
 
-  .li:hover::after {
-    width: 100%;
-  }
-}
+        li {
+          transition: color 0.3s ease;
 
-.dropdownMenu {
-  width: max-content;
-  height: max-content;
-  position: absolute;
-  top: 81px;
-  background-color: white;
-  border-radius: 0 0 5px 5px;
-  color: black;
-  padding: 28px;
-  padding-left: 56px;
+          &:hover {
+            color: #37c174;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      color: #37c174;
+      cursor: pointer;
+
+      .dropdownMenu {
+        max-height: 300px;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 21px;
+      width: 0;
+      height: 3px;
+      background-color: rgb(62, 175, 126);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
 }

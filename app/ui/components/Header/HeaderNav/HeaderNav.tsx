@@ -1,5 +1,6 @@
 import styles from "./HeaderNav.module.scss";
 import DropdownList from "@/app/ui/components/Header/HeaderNav/DropdownList";
+import Link from "next/link";
 
 export default function HeaderNav() {
   const headerNavList = [
@@ -45,13 +46,13 @@ export default function HeaderNav() {
 
   return (
     <div className={styles.headerNavigation}>
-      <ul className={styles.ul}>
-        <li className={styles.li}>
-          <span>الرئيسية</span>
+      <ul className={styles.headerUl}>
+        <li className={styles.headerLi}>
+          <Link href="/">الرئيسية</Link>
         </li>
         {headerNavList.map((item) => {
           return (
-            <li className={styles.li} key={item.id}>
+            <li className={styles.headerLi} key={item.id}>
               <span>{item.name}</span>
               <DropdownList list={item.list} />
             </li>

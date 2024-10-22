@@ -20,24 +20,6 @@
       width: 160px;
       height: 36px;
     }
-
-    .headerAuth {
-      display: flex;
-
-      .headerBtn {
-        width: 108px;
-        height: 42px;
-        background-color: rgb(62, 175, 126);
-        margin: 0 5px;
-        border-radius: 5px;
-        color: black;
-        transition: all 0.3s ease;
-      }
-
-      .headerBtn:hover {
-        background-color: white;
-      }
-    }
   }
 }
 

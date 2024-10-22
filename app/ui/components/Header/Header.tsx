@@ -3,6 +3,8 @@
 import styles from "./Header.module.scss";
 import { useEffect, useState } from "react";
 import HeaderNav from "@/app/ui/components/Header/HeaderNav/HeaderNav";
+import HeaderAuth from "@/app/ui/components/Header/HeaderAuth/HeaderAuth";
+import Link from "next/link";
 
 export default function Header() {
   const [currentScrollY, setCurrentScrollY] = useState("start");
@@ -39,18 +41,15 @@ export default function Header() {
     >
       <div className={styles.container}>
         <div className={styles.headerBranding}>
-          <a href="/">
+          <Link href="/">
             <img
               src="https://fxone1.com/wp-content/uploads/2024/09/FXONE.png"
               alt="Fx One"
             />
-          </a>
+          </Link>
         </div>
         <HeaderNav />
-        <div className={styles.headerAuth}>
-          <button className={styles.headerBtn}>دخول</button>
-          <button className={styles.headerBtn}>سجل الأن</button>
-        </div>
+        <HeaderAuth />
       </div>
     </header>
   );
